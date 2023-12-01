@@ -1,0 +1,46 @@
+{% extends 'base/base.html' %}
+<!-- Se cargan los estáticos-->
+{% load static %}
+<!-- Inicio bloque título-->
+{%block tittle %} Crear Empleados {% endblock tittle %}
+<!-- Fin bloque título-->
+{% block body %}
+<!-- inicio nav -->
+{% include 'base/menu.html' %}
+<div class="Container">
+  <div class="ContainerCOuntry">
+    <h1 class="ContainerCountrytitulo m-3">Create City</h1>
+    <form action="" method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      <div class="ContainerCountryFieldsField m-3">
+        
+       ID city: {{form.idcity}}
+      </div>
+      <div class="ContainerCountryFieldsField m-3">
+        Name city: {{form.namecity}}
+      </div>
+      <div class="ContainerCountryFieldsField m-3">
+        Activ: {{form.activCity}}
+      </div>
+      <div class="ContainerCountryFieldsField m-3">
+        District: {{form.namedistrict}}
+      </div>
+       <div class="ContainerCountryFieldsField m-3">
+          population: {{form.population}}
+       </div>
+        <div class="ContainerCountryFieldsField m-3">
+          Mayor: {{form.namemayor}}
+        </div>
+      </div>
+      </div>
+      <button type="submit" class="btn btn-primary m-3 btn-lg">Save</button>
+    </form>
+    <a
+      class="btn btn-outline-secondary"
+      href="{% url 'inicio_app:InicioTemplateView' %}"
+    >
+      Volver
+    </a>
+  </div>
+</div>
+{% include 'base/footer.html' %} {% endblock body %}
